@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIGAR KING 雪茄王｜台北雪茄館</title>
+<meta name="description" content="CIGAR KING 雪茄王，台北大安區忠孝東路雪茄館。老闆親自嚴選雪茄，室內外皆溫馨舒適，專業侍茄服務。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Noto+Serif+TC:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#1b130e;
+    --espresso-2:#221810;
+    --char:#2a1e15;
+    --char-2:#33251a;
+    --parchment:#eee3d0;
+    --parchment-dim:#b6a893;
+    --ember:#c4602a;
+    --ember-bright:#e08a4a;
+    --gold:#bd9760;
+    --gold-dim:#8a7148;
+    --oxblood:#5c1c20;
+    --line: rgba(238,227,208,0.12);
+    --display-en: 'Fraunces', serif;
+    --display-zh: 'Noto Serif TC', serif;
+    --body-en: 'Inter', sans-serif;
+    --body-zh: 'Noto Sans TC', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(196,96,42,0.10), transparent 60%),
+      var(--espresso);
+    color:var(--parchment);
+    font-family: var(--body-zh), var(--body-en);
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+  ::selection{background:var(--ember); color:var(--espresso);}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(27,19,14,0.72);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--display-en); font-size:18px; letter-spacing:0.04em;}
+  .brand .ring{width:26px; height:26px;}
+  .brand small{display:block; font-family:var(--body-zh); font-size:11px; color:var(--parchment-dim); letter-spacing:0.15em; font-weight:400;}
+  nav.links{display:flex; gap:34px; font-size:14px; letter-spacing:0.04em;}
+  nav.links a{color:var(--parchment-dim); text-decoration:none; transition:color .25s;}
+  nav.links a:hover{color:var(--ember-bright);}
+  .nav-cta{
+    font-size:13px; letter-spacing:0.05em; border:1px solid var(--gold-dim);
+    padding:9px 18px; border-radius:999px; text-decoration:none; color:var(--gold);
+    transition:all .25s;
+  }
+  .nav-cta:hover{background:var(--gold); color:var(--espresso); border-color:var(--gold);}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; min-height:100vh;
+    display:flex; align-items:center;
+    padding:140px 0 90px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .smoke{
+    position:absolute; pointer-events:none; border-radius:50%;
+    filter:blur(40px); opacity:0.16; background:radial-gradient(circle, var(--parchment), transparent 70%);
+    animation: drift 18s ease-in-out infinite;
+  }
+  .smoke.s1{width:340px; height:340px; left:8%; top:20%; animation-delay:0s;}
+  .smoke.s2{width:260px; height:260px; right:10%; top:5%; animation-delay:-6s;}
+  .smoke.s3{width:420px; height:420px; right:-5%; bottom:-10%; animation-delay:-11s;}
+  @keyframes drift{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(-30px,-50px) scale(1.12); }
+  }
+  .ember-dot{
+    width:8px; height:8px; border-radius:50%; background:var(--ember-bright);
+    box-shadow:0 0 12px 4px rgba(224,138,74,0.7);
+    animation:pulse 2.4s ease-in-out infinite;
+    display:inline-block;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:0.55; box-shadow:0 0 10px 3px rgba(224,138,74,0.5); }
+    50%{ opacity:1; box-shadow:0 0 18px 6px rgba(224,138,74,0.85); }
+  }
+  .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.3fr 0.9fr; gap:60px; align-items:center;}
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:12.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:26px; font-family:var(--body-en); font-weight:500;
+  }
+  .eyebrow::before{content:''; width:28px; height:1px; background:var(--gold-dim);}
+  h1.title{
+    font-family:var(--display-en);
+    font-weight:500;
+    font-size:clamp(48px, 7vw, 88px);
+    letter-spacing:0.01em;
+    line-height:0.95;
+    color:var(--parchment);
+  }
+  h1.title .zh{
+    display:block; font-family:var(--display-zh); font-size:clamp(22px,2.6vw,32px);
+    font-weight:600; color:var(--ember-bright); letter-spacing:0.08em; margin-top:16px;
+  }
+  .hero p.lede{
+    margin-top:26px; max-width:460px; font-size:17px; color:var(--parchment-dim); font-weight:300;
+  }
+  .hero-ctas{display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:2px; font-size:14.5px; letter-spacing:0.03em;
+    text-decoration:none; transition:all .25s; font-family:var(--body-zh); font-weight:500;
+  }
+  .btn-primary{background:var(--ember); color:#fff3e8;}
+  .btn-primary:hover{background:var(--ember-bright);}
+  .btn-outline{border:1px solid var(--line); color:var(--parchment);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* rating badge — signature ring element */
+  .badge-wrap{display:flex; justify-content:center;}
+  .ring-badge{position:relative; width:230px; height:230px;}
+  .ring-badge svg{width:100%; height:100%;}
+  .ring-badge .core{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+  }
+  .ring-badge .score{font-family:var(--display-en); font-size:46px; color:var(--parchment); font-weight:500; line-height:1;}
+  .ring-badge .stars{color:var(--gold); font-size:14px; letter-spacing:3px; margin-top:8px;}
+  .ring-badge .count{font-size:11px; color:var(--parchment-dim); letter-spacing:0.15em; margin-top:6px;}
+
+  /* ---------- section shared ---------- */
+  section{padding:110px 0;}
+  .sec-head{max-width:640px; margin-bottom:64px;}
+  .sec-eyebrow{
+    font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ember-bright);
+    font-family:var(--body-en); font-weight:500; margin-bottom:16px; display:block;
+  }
+  h2.sec-title{
+    font-family:var(--display-zh); font-weight:600; font-size:clamp(28px,3.4vw,40px);
+    color:var(--parchment); letter-spacing:0.02em;
+  }
+  .sec-title .en{display:block; font-family:var(--display-en); font-style:italic; font-size:16px; color:var(--parchment-dim); font-weight:300; margin-top:10px; letter-spacing:0.05em;}
+
+  /* ---------- about ---------- */
+  .about{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+  .about-copy p{color:var(--parchment-dim); font-size:16px; margin-bottom:18px; max-width:480px;}
+  .about-copy p strong{color:var(--parchment); font-weight:500;}
+  .leaf-art{display:flex; align-items:center; justify-content:center;}
+  .leaf-art svg{width:100%; max-width:360px; height:auto;}
+
+  /* ---------- features ---------- */
+  .feat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .feat-card{background:var(--espresso-2); padding:38px 30px; transition:background .3s;}
+  .feat-card:hover{background:var(--char);}
+  .feat-num{
+    width:44px; height:44px; border-radius:50%; border:1px solid var(--gold-dim);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display-en); font-style:italic; color:var(--gold); font-size:14px;
+    margin-bottom:22px;
+  }
+  .feat-card h3{font-family:var(--display-zh); font-weight:600; font-size:17px; margin-bottom:12px; color:var(--parchment);}
+  .feat-card p{font-size:14px; color:var(--parchment-dim); font-weight:300;}
+
+  /* ---------- reviews ---------- */
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .review-card{
+    background:var(--char); border:1px solid var(--line); padding:32px 28px;
+    position:relative;
+  }
+  .review-stars{color:var(--gold); font-size:13px; letter-spacing:2px; margin-bottom:18px;}
+  .review-quote{font-size:15.5px; color:var(--parchment); font-weight:300; line-height:1.85; margin-bottom:24px; min-height:96px;}
+  .review-who{display:flex; align-items:center; gap:12px; border-top:1px solid var(--line); padding-top:16px;}
+  .review-avatar{
+    width:36px; height:36px; border-radius:50%; background:var(--oxblood);
+    display:flex; align-items:center; justify-content:center; font-family:var(--display-en);
+    font-size:14px; color:var(--gold);
+  }
+  .review-name{font-size:13.5px; color:var(--parchment); font-weight:500;}
+  .review-meta{font-size:11.5px; color:var(--parchment-dim); margin-top:2px;}
+
+  /* ---------- promo ribbon ---------- */
+  .promo{
+    background:linear-gradient(120deg, var(--oxblood), #431216 65%);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:60px 0;
+  }
+  .promo-inner{display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;}
+  .promo-text .tag{font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); font-family:var(--body-en); font-weight:500;}
+  .promo-text h3{font-family:var(--display-zh); font-size:clamp(24px,3vw,32px); color:var(--parchment); margin-top:12px; font-weight:600;}
+  .promo-text p{color:var(--parchment-dim); margin-top:8px; font-size:14.5px;}
+
+  /* ---------- info / footer ---------- */
+  footer{padding:100px 0 60px;}
+  .info-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:50px; border-bottom:1px solid var(--line); padding-bottom:60px; margin-bottom:40px;}
+  .info-block .label{font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); font-family:var(--body-en); margin-bottom:14px; display:block;}
+  .info-block p, .info-block a{font-size:15px; color:var(--parchment-dim); text-decoration:none; line-height:1.9;}
+  .info-block a:hover{color:var(--ember-bright);}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:12.5px; color:var(--parchment-dim);}
+  .foot-brand{font-family:var(--display-en); font-size:15px; color:var(--parchment); letter-spacing:0.05em;}
+
+  @media (max-width: 860px){
+    nav.links{display:none;}
+    .hero-inner{grid-template-columns:1fr; gap:50px;}
+    .badge-wrap{order:-1;}
+    .ring-badge{width:170px; height:170px;}
+    .about{grid-template-columns:1fr;}
+    .leaf-art{order:-1; max-width:220px; margin:0 auto;}
+    .feat-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:1fr;}
+    .info-grid{grid-template-columns:1fr; gap:34px;}
+    .promo-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .smoke, .ember-dot{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <svg class="ring" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#bd9760" stroke-width="1.2"/><circle cx="20" cy="20" r="13" stroke="#bd9760" stroke-width="0.6"/><text x="20" y="24" text-anchor="middle" font-size="11" fill="#bd9760" font-family="Fraunces, serif">K</text></svg>
+      <div>
+        CIGAR KING
+        <small>雪茄王 台北雪茄館</small>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#about">關於</a>
+      <a href="#features">特色</a>
+      <a href="#reviews">評論</a>
+      <a href="#info">資訊</a>
+    </nav>
+    <a class="nav-cta" href="tel:0900080486">預約來電</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <span class="smoke s1"></span>
+    <span class="smoke s2"></span>
+    <span class="smoke s3"></span>
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow"><span class="ember-dot"></span> 大安區．忠孝東路四段</div>
+        <h1 class="title">CIGAR KING
+          <span class="zh">雪茄王 台北雪茄館</span>
+        </h1>
+        <p class="lede">在城市入夜之後，找一個位子坐下，讓老闆為你點起一支合適的雪茄。這裡沒有匆忙，只有煙草、酒水，與慢慢展開的夜晚。</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#info">查看營業資訊</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=CIGAR%20KING%20%E9%9B%AA%E8%8C%84%E7%8E%8B%20%E5%8F%B0%E5%8C%97" target="_blank" rel="noopener">規劃路線</a>
+        </div>
+      </div>
+      <div class="badge-wrap">
+        <div class="ring-badge">
+          <svg viewBox="0 0 230 230">
+            <circle cx="115" cy="115" r="104" fill="none" stroke="#8a7148" stroke-width="1"/>
+            <circle cx="115" cy="115" r="94" fill="none" stroke="#8a7148" stroke-width="0.5"/>
+            <circle cx="115" cy="115" r="112" fill="none" stroke="#8a7148" stroke-width="0.5" stroke-dasharray="1 7"/>
+          </svg>
+          <div class="core">
+            <div class="score">4.9</div>
+            <div class="stars">★★★★★</div>
+            <div class="count">GOOGLE．64 則評論</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-copy">
+        <span class="sec-eyebrow">About</span>
+        <h2 class="sec-title">關於雪茄王</h2>
+        <p style="margin-top:22px;"><strong>每一支雪茄，都是老闆親自嚴選。</strong>不追求種類最多，只在乎品質與口感是否經得起一支菸的時間。</p>
+        <p>室內座位溫暖靜謐，戶外區域則適合微風與夜色。無論是熟客小酌，或是第一次接觸雪茄的朋友，店長與店員都會依你的口味與經驗，推薦最合適的選擇。</p>
+        <p>7 天前重新開幕，環境持續整修升級中，未來也將提供可可咖啡等新品項。</p>
+      </div>
+      <div class="leaf-art">
+        <svg viewBox="0 0 300 300" fill="none">
+          <ellipse cx="150" cy="150" rx="120" ry="70" stroke="#bd9760" stroke-width="1" transform="rotate(-18 150 150)"/>
+          <path d="M40 150 Q150 90 260 150" stroke="#8a7148" stroke-width="0.6" fill="none" transform="rotate(-18 150 150)"/>
+          <path d="M40 150 Q150 210 260 150" stroke="#8a7148" stroke-width="0.6" fill="none" transform="rotate(-18 150 150)"/>
+          <circle cx="150" cy="150" r="34" stroke="#c4602a" stroke-width="1.4" transform="rotate(-18 150 150)"/>
+          <circle cx="150" cy="150" r="34" stroke="#c4602a" stroke-width="1.4" transform="rotate(-18 150 150) translate(0,0)"/>
+          <text x="150" y="106" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="#eee3d0" transform="rotate(-18 150 150)">KING</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow">Signature</span>
+        <h2 class="sec-title">為什麼是雪茄王
+          <span class="en">what guests keep saying</span>
+        </h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-num">壹</div>
+          <h3>老闆親自嚴選</h3>
+          <p>每支雪茄皆經過老闆細心挑選，品質與口味有一定水準，值得反覆造訪。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">貳</div>
+          <h3>專業侍茄推薦</h3>
+          <p>店長與店員具備豐富知識，會依客人喜好推薦最合適的雪茄與搭配方式。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">參</div>
+          <h3>內外皆宜的氛圍</h3>
+          <p>室內外皆佈置得溫馨舒適，環境乾淨、氣氛放鬆，久坐也不覺得擁擠。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">肆</div>
+          <h3>氣泡水暢飲</h3>
+          <p>加購氣泡水即可無限暢飲，搭配雪茄與酒水，慢慢享受一整晚。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-eyebrow">Reviews</span>
+        <h2 class="sec-title">來自客人的評價
+          <span class="en">4.9 / 5，64 則 Google 評論</span>
+        </h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">去過不少雪茄店，但這裡是會讓人想一來再來的地方，氣氛與服務都留下深刻印象。</p>
+          <div class="review-who">
+            <div class="review-avatar">謝</div>
+            <div>
+              <div class="review-name">謝明翰</div>
+              <div class="review-meta">在地嚮導．3 個月前</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">室內外都溫馨舒適，每支雪茄都是老闆親自挑選，品質口味俱佳，還會再訪。</p>
+          <div class="review-who">
+            <div class="review-avatar">M</div>
+            <div>
+              <div class="review-name">Michael</div>
+              <div class="review-meta">在地嚮導．1 年前</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">第一次體驗，店長介紹得很詳細，環境乾淨又chill，下次還會再來。</p>
+          <div class="review-who">
+            <div class="review-avatar">A</div>
+            <div>
+              <div class="review-name">Alex Eng</div>
+              <div class="review-meta">在地嚮導．5 個月前</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO -->
+  <section class="promo">
+    <div class="wrap promo-inner">
+      <div class="promo-text">
+        <span class="tag">Reopening · July Offer</span>
+        <h3>重新開幕！7 月優惠：酒水買一送一</h3>
+        <p>限時優惠，歡迎老朋友與新朋友一起來坐坐。</p>
+      </div>
+      <a class="btn btn-primary" href="tel:0900080486">撥打電話預約</a>
+    </div>
+  </section>
+
+  <!-- INFO / FOOTER -->
+  <footer id="info">
+    <div class="wrap">
+      <div class="info-grid">
+        <div class="info-block">
+          <span class="label">Location</span>
+          <p>106 台北市大安區<br>忠孝東路四段181巷41號</p>
+        </div>
+        <div class="info-block">
+          <span class="label">Hours &amp; Contact</span>
+          <p>每日 15:00 開始營業<br><a href="tel:0900080486">0900 080 486</a></p>
+        </div>
+        <div class="info-block">
+          <span class="label">Visit</span>
+          <p>
+            <a href="https://www.google.com/maps/search/?api=1&query=CIGAR%20KING%20%E9%9B%AA%E8%8C%84%E7%8E%8B%20%E5%8F%B0%E5%8C%97" target="_blank" rel="noopener">在 Google 地圖上查看 →</a><br>
+            內用．外送
+          </p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="foot-brand">CIGAR KING 雪茄王</div>
+        <div>菸草酒吧．台北大安區</div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>
